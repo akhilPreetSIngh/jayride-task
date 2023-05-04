@@ -1,0 +1,59 @@
+<div class="flex-grow-1 container-xxl">
+  <ng-container *ngIf="!responseError && !loadingData">
+    <div class="row pb-3">
+      <div class="col-sm-12 m-auto row">
+        <div class="col-md-8 col-xl-4 m-auto">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Vehicle Type</th>
+                <th scope="col">Price per Passenger</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let listing of listingThreePassengers">
+                <td>{{ listing.name }}</td>
+                <td>{{ listing.vehicleType.name }}</td>
+                <td>{{ listing.pricePerPassenger }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <span class="col-6 text-end"> the total number of listings: </span>
+        <span class="col-6">
+          {{ totalListings }}
+        </span>
+      </div>
+      <div class="row mb-2">
+        <span class="col-6 text-end">minimum price:</span>
+        <span class="col-6">{{ minPrice }}</span>
+      </div>
+      <div class="row mb-2">
+        <span class="col-6 text-end">maximum price:</span>
+        <span class="col-6">{{ maxPrice }}</span>
+      </div>
+      <div class="row mb-2">
+        <span class="col-6 text-end">average price:</span>
+        <span class="col-6">{{ averagePrice }}</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="responseError">
+    <p>Some error occured, please try again later.</p>
+  </ng-container>
+
+  <ng-container *ngIf="loadingData">
+    <div class="d-flex justify-content-center align-self-center">
+      <span class="p-3">Loading Data</span>
+      <div class="spinner-border p-4" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-container>
+</div>

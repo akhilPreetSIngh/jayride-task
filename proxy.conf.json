@@ -1,0 +1,10 @@
+{
+  "/getOptions": {
+    "target": "https://jayridechallengeapi.azurewebsites.net/api/QuoteRequest",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/getOptions": ""
+    }
+  }
+}

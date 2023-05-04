@@ -4,8 +4,8 @@ import { TravellerDetailFormComponent } from './traveller-detail-form/traveller-
 import { TravelOptionsListComponent } from './travel-options-list/travel-options-list.component';
 
 const routes: Routes = [
-  { path: 'traveller-details', component: TravellerDetailFormComponent },
   { path: 'travel-options', component: TravelOptionsListComponent },
+  { path: '', component: TravellerDetailFormComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,199 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 m-auto">
+      <h2 class="text-center">Traveller Details</h2>
+      <div class="mb-3 row">
+        <label for="travellerName" class="col-sm-12 col-md-4 col-form-label"
+          >Traveller Name</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="travellerName"
+            [ngClass]="{
+              'is-invalid': name.invalid && (name.dirty || name.touched)
+            }"
+            [(ngModel)]="form.name"
+            name="'name"
+            #name="ngModel"
+            required
+          />
+          <div
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="text-danger"
+          >
+            Name field cannot be empty
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="travellerEmail" class="col-sm-12 col-md-4 col-form-label"
+          >Traveller Email</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <input
+            type="email"
+            class="form-control"
+            id="travellerEmail"
+            [ngClass]="{
+              'is-invalid': email.invalid && (email.dirty || email.touched)
+            }"
+            [(ngModel)]="form.email"
+            name="email"
+            #email="ngModel"
+            required
+          />
+          <div
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="text-danger"
+          >
+            Email field cannot be empty
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="channel" class="col-sm-12 col-md-4 col-form-label"
+          >Channel</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <select
+            class="form-select"
+            id="channel"
+            [ngClass]="{
+              'is-invalid':
+                channel.invalid && (channel.dirty || channel.touched)
+            }"
+            [(ngModel)]="form.channel"
+            name="channel"
+            #channel="ngModel"
+            required
+          >
+            <option selected value="">Please Select</option>
+            <option value="Partner">Partner</option>
+            <option value="Agent">Agent</option>
+            <option value="directCustomer">Direct Cutomer</option>
+          </select>
+          <div
+            *ngIf="channel.invalid && (channel.dirty || channel.touched)"
+            class="text-danger"
+          >
+            Channel field cannot be empty
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="meetAndGreet" class="col-sm-12 col-md-4 col-form-label"
+          >Meet & Greet Required</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <select
+            class="form-select"
+            id="meetAndGreet"
+            [ngClass]="{
+              'is-invalid':
+                meetAndGreetRequested.invalid &&
+                (meetAndGreetRequested.dirty || meetAndGreetRequested.touched)
+            }"
+            [(ngModel)]="form.meetAndGreetRequested"
+            name="meetAndGreetRequested"
+            #meetAndGreetRequested="ngModel"
+            required
+          >
+            <option selected value="">Please Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div
+            *ngIf="
+              meetAndGreetRequested.invalid &&
+              (meetAndGreetRequested.dirty || meetAndGreetRequested.touched)
+            "
+            class="text-danger"
+          >
+            Meet & Greet Requested field cannot be empty
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="travelDateTime" class="col-sm-12 col-md-4 col-form-label"
+          >Traveller DateTime</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <input
+            type="datetime"
+            class="form-control"
+            id="travelDateTime"
+            [ngClass]="{
+              'is-invalid':
+                travelDateTime.invalid &&
+                (travelDateTime.dirty || travelDateTime.touched)
+            }"
+            [(ngModel)]="form.travelDateTime"
+            name="travelDateTime"
+            #travelDateTime="ngModel"
+            required
+          />
+          <div
+            *ngIf="
+              travelDateTime.invalid &&
+              (travelDateTime.dirty || travelDateTime.touched)
+            "
+            class="text-danger"
+          >
+            Travel Datetime field cannot be empty
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="bookingPrice" class="col-sm-12 col-md-4 col-form-label"
+          >Booking Price</label
+        >
+        <div class="col-sm-12 col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="bookingPrice"
+            [ngClass]="{
+              'is-invalid':
+                bookingPrice.invalid &&
+                (bookingPrice.dirty || bookingPrice.touched)
+            }"
+            [(ngModel)]="form.bookingPrice"
+            name="bookingPrice"
+            #bookingPrice="ngModel"
+            required
+          />
+          <div
+            *ngIf="
+              bookingPrice.invalid &&
+              (bookingPrice.dirty || bookingPrice.touched)
+            "
+            class="text-danger"
+          >
+            Booking Price field cannot be empty
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-12 col-md-6 row m-auto justify-content-between mt-4">
+          <!-- <button
+            type="button"
+            class="col-sm-5 mb-3 btn btn-warning"
+            (click)="resetForm()"
+          >
+            Reset
+          </button> -->
+          <button
+            type="submit"
+            class="col-sm-5 mb-3 btn btn-success"
+            (click)="submitForm()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

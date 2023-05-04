@@ -1,3 +1,7 @@
-<h1>App {{title}} initialized</h1>
-<button type="button" class="btn btn-primary btn-lg">Angular</button>
-<button type="button" class="btn btn-secondary btn-lg">Bootstrap</button>
+<div class="d-flex flex-column h-100">
+  <app-header></app-header>
+  <div class="d-flex flex-column flex-grow-1">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</div>
